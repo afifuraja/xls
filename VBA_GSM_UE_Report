@@ -1,0 +1,245 @@
+Sub Macro_2G_kiri()
+'
+' Macro5 Macro
+'
+
+'
+    Sheets("IE Statistics").Select
+    Sheets.Add After:=ActiveSheet
+    
+    Sheets("IE Statistics").Select
+    ActiveSheet.Shapes.Range(Array("Picture 2")).Select
+    Selection.Delete
+
+    ActiveSheet.Shapes.Range(Array("Picture 2", "Picture 4", "Picture 8", _
+        "Picture 10", "Picture 44", "Picture 46", "Picture 50", "Picture 52")).Select
+    Selection.Copy
+       
+    Sheets("Sheet1").Select
+    ActiveSheet.Paste
+    Selection.ShapeRange.Align msoAlignTops, msoFalse
+    With Selection.ShapeRange.Line
+        .Visible = msoTrue
+        .ForeColor.ObjectThemeColor = msoThemeColorText1
+        .ForeColor.TintAndShade = 0
+        .ForeColor.Brightness = 0
+        .Transparency = 0
+    End With
+    
+    Sheets("IE Statistics").Select
+    Range("E1").Select
+    ActiveCell.FormulaR1C1 = "RxLev"
+    Range("F1").Select
+    ActiveCell.FormulaR1C1 = "RxQual"
+    Range("F2").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=R[66]C[-5]"
+    Range("F3").Select
+    ActiveWindow.SmallScroll Down:=-12
+    Range("E2").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=R[26]C[-4]"
+    Range("E3").Select
+    ActiveWindow.SmallScroll Down:=-6
+    ActiveCell.FormulaR1C1 = "=""Avg :"""
+    Range("E3").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=""Avg : ""&R[-1]C"
+    Range("E3").Select
+    ActiveCell.FormulaR1C1 = "=""Avg : ""&R[-1]C &"" dBm"""
+    Range("E4").Select
+    ActiveCell.FormulaR1C1 = "=""Avg : ""&R[-2]C[1]"
+    Range("E1:F2").Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideVertical)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideHorizontal)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    Range("E1:F1").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorAccent5
+        .TintAndShade = 0.599993896298105
+        .PatternTintAndShade = 0
+    End With
+    Range("E1:F2").Select
+    
+ Sheets("Sheet1").Select
+    Selection.ShapeRange.IncrementLeft 74.25
+    Selection.ShapeRange.IncrementTop 33.75
+    Range("J13").Select
+    ActiveSheet.Shapes.Range(Array("Picture 50")).Select
+    Selection.ShapeRange.IncrementLeft -51.75
+    Selection.ShapeRange.IncrementTop 183.75
+    ActiveSheet.Shapes.Range(Array("Picture 44")).Select
+    Selection.ShapeRange.IncrementLeft 252
+    Selection.ShapeRange.IncrementTop 190.5
+    ActiveSheet.Shapes.Range(Array("Picture 8")).Select
+    Selection.ShapeRange.IncrementLeft 249.75
+    Selection.ShapeRange.IncrementTop -20.25
+    ActiveSheet.Shapes.Range(Array("Picture 2")).Select
+    Selection.ShapeRange.IncrementLeft -48.75
+    Selection.ShapeRange.IncrementTop -18.75
+    ActiveSheet.Shapes.Range(Array("Picture 50")).Select
+    Selection.ShapeRange.IncrementLeft 0.75
+    Selection.ShapeRange.IncrementTop 8.25
+    ActiveSheet.Shapes.Range(Array("Picture 2")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 2", "Picture 8")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 2", "Picture 8", "Picture 44")). _
+        Select
+    ActiveSheet.Shapes.Range(Array("Picture 2", "Picture 8", "Picture 44", _
+        "Picture 50")).Select
+    Selection.ShapeRange.Height = 216
+    Selection.ShapeRange.Width = 273.6
+    ActiveSheet.Shapes.Range(Array("Picture 52")).Select
+    Selection.ShapeRange.IncrementLeft -117
+    Selection.ShapeRange.IncrementTop 312
+    ActiveSheet.Shapes.Range(Array("Picture 46")).Select
+    Selection.ShapeRange.IncrementLeft 142.5
+    Selection.ShapeRange.IncrementTop 294
+    ActiveSheet.Shapes.Range(Array("Picture 10")).Select
+    Selection.ShapeRange.IncrementLeft 147
+    Selection.ShapeRange.IncrementTop 128.25
+    ActiveSheet.Shapes.Range(Array("Picture 4")).Select
+    Selection.ShapeRange.IncrementLeft -138
+    Selection.ShapeRange.IncrementTop 122.25
+    ActiveSheet.Shapes.Range(Array("Picture 4", "Picture 10")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 4", "Picture 10", "Picture 46")). _
+        Select
+    ActiveSheet.Shapes.Range(Array("Picture 4", "Picture 10", "Picture 46", _
+        "Picture 52")).Select
+    Selection.ShapeRange.LockAspectRatio = msoTrue
+    Selection.ShapeRange.Width = 93.6
+    Selection.ShapeRange.IncrementLeft 40.5
+    Selection.ShapeRange.IncrementTop 23.25
+    Range("N14").Select
+    ActiveSheet.Shapes.Range(Array("Picture 50")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 50", "Picture 44")).Select
+    Selection.ShapeRange.IncrementLeft 0.75
+    Selection.ShapeRange.IncrementTop 17.25
+    Range("P21").Select
+    ActiveSheet.Shapes.Range(Array("Picture 52")).Select
+    Selection.ShapeRange.IncrementLeft -19.5
+    Selection.ShapeRange.IncrementTop 32.25
+    ActiveSheet.Shapes.Range(Array("Picture 46")).Select
+    Selection.ShapeRange.IncrementLeft 19.5
+    Selection.ShapeRange.IncrementTop 45
+    ActiveSheet.Shapes.AddShape(msoShapeRectangle, 213.75, 21, 78.75, 17.25).Select
+    With Selection.ShapeRange.Fill
+        .Visible = msoTrue
+        .ForeColor.ObjectThemeColor = msoThemeColorBackground1
+        .ForeColor.TintAndShade = 0
+        .ForeColor.Brightness = 0
+        .Transparency = 0
+        .Solid
+    End With
+    With Selection.ShapeRange.Line
+        .Visible = msoTrue
+        .ForeColor.ObjectThemeColor = msoThemeColorText1
+        .ForeColor.TintAndShade = 0
+        .ForeColor.Brightness = 0
+        .Transparency = 0
+    End With
+    With Selection.ShapeRange.Line
+        .Visible = msoTrue
+        .Weight = 0.5
+    End With
+    Selection.Formula = "='IE Statistics'!E3"
+    Selection.Copy
+    ActiveSheet.Paste
+    Selection.ShapeRange.IncrementLeft 279.75
+    Selection.ShapeRange.IncrementTop -12
+    Selection.Formula = "='IE Statistics'!E4"
+    ActiveSheet.Shapes.Range(Array("Rectangle 10", "Picture 2")).Select
+    Range("N6").Select
+    ActiveSheet.Shapes.Range(Array("Rectangle 10")).Select
+    Selection.ShapeRange.TextFrame2.TextRange.ParagraphFormat.Alignment = _
+        msoAlignCenter
+    Selection.ShapeRange.TextFrame2.VerticalAnchor = msoAnchorMiddle
+    ActiveSheet.Shapes.Range(Array("Rectangle 9")).Select
+    Selection.ShapeRange.TextFrame2.TextRange.ParagraphFormat.Alignment = _
+        msoAlignCenter
+    Selection.ShapeRange.TextFrame2.VerticalAnchor = msoAnchorMiddle
+    Selection.ShapeRange.TextFrame2.TextRange.Font.Size = 9
+    ActiveSheet.Shapes.Range(Array("Rectangle 10")).Select
+    Selection.ShapeRange.TextFrame2.TextRange.Font.Size = 9
+    ActiveSheet.Shapes.Range(Array("Picture 2")).Select
+    
+        Range("N2").Select
+    ActiveSheet.Shapes.Range(Array("Picture 8")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 8", "Picture 44")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 8", "Picture 44", "Picture 10")). _
+        Select
+    ActiveSheet.Shapes.Range(Array("Picture 8", "Picture 44", "Picture 10", _
+        "Rectangle 10")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 8", "Picture 44", "Picture 10", _
+        "Rectangle 10", "Picture 46")).Select
+    Selection.ShapeRange.IncrementLeft 10.25
+    Selection.ShapeRange.IncrementTop 1.5
+    Range("O22").Select
+    ActiveSheet.Shapes.Range(Array("Picture 50")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 50", "Picture 44")).Select
+    Selection.ShapeRange.IncrementTop 0.75
+    Selection.ShapeRange.IncrementTop 0.75
+    Selection.ShapeRange.IncrementTop 0.75
+    Selection.ShapeRange.IncrementTop 0.75
+    Selection.ShapeRange.IncrementTop 0.75
+    Selection.ShapeRange.IncrementTop 0.75
+    Range("N16").Select
+    
+        Range("N10").Select
+    ActiveSheet.Shapes.Range(Array("Picture 2")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 2", "Picture 8")).Select
+    Selection.ShapeRange.Align msoAlignBottoms, msoFalse
+    ActiveSheet.Shapes.Range(Array("Picture 50")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 50", "Picture 44")).Select
+    Selection.ShapeRange.Align msoAlignTops, msoFalse
+    Range("O11").Select
+    ActiveSheet.Shapes.Range(Array("Picture 2")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 2", "Picture 50")).Select
+    Selection.ShapeRange.Align msoAlignLefts, msoFalse
+    ActiveSheet.Shapes.Range(Array("Picture 8")).Select
+    ActiveSheet.Shapes.Range(Array("Picture 8", "Picture 44")).Select
+    Selection.ShapeRange.Align msoAlignLefts, msoFalse
+    ActiveSheet.Shapes.SelectAll
+    Selection.ShapeRange.TextFrame2.TextRange.Font.Bold = msoTrue
+    
+    ActiveSheet.Shapes.SelectAll
+    
+End Sub
+
+
