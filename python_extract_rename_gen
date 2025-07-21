@@ -1,0 +1,44 @@
+import os
+import zipfile
+
+# Use raw string to avoid escape sequence issues, ganti aja folder nya sesuai folder di laptop tempat folder logfile
+root_folder = r'D:\IOH\04. Logfiles Genex\20250604 IOH_TSEL_XL_PATRAJASA\IOH_TSEL_XL_PATRAJASA'
+
+# Walk through all folders and subfolders
+for foldername, subfolders, filenames in os.walk(root_folder):
+    for filename in filenames:
+        if filename.lower().endswith('.zip'):
+            zip_path = os.path.join(foldername, filename)
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                zip_ref.extractall(foldername)
+     
+  
+def get_unique_filename(filepath):
+    """Generate a new filename with a counter if it already exists."""
+    base, ext = os.path.splitext(filepath)
+    counter = 1
+    new_filepath = filepath
+    while os.path.exists(new_filepath):
+        new_filepath = f"{base}_{counter}{ext}"
+        counter += 1
+    return new_filepath
+
+# Set your root folder path
+#root_folder = r'D:\Path\To\Your\Folder'  # ← Change this
+
+# Walk through all subdirectories
+for foldername, subfolders, filenames in os.walk(root_folder):
+    for filename in filenames:
+        if filename.lower().endswith('.gen'):
+            original_file_path = os.path.join(foldername, filename)
+            folder_base_name = os.path.basename(foldername)
+            new_filename = folder_base_name + '.gen'
+            new_file_path = os.path.join(foldername, new_filename)
+
+            # Generate a unique filename if needed
+            safe_file_path = get_unique_filename(new_file_path)
+
+            # Rename the file
+            os.rename(original_file_path, safe_file_path)
+            print(f'Extracted: {zip_path} to {foldername}')
+            print(f"Renamed: {filename} → {os.path.basename(safe_file_path)}")
